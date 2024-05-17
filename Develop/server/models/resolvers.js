@@ -16,13 +16,13 @@ const resolvers = {
   },
   Mutation: {
     // Create a new user
-    createUser: async (_, { username, email, password }) => {
+    addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
     },
     // Login a user
-    loginUser: async (_, { email, password }) => {
+    login: async (_, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user || !(await user.isCorrectPassword(password))) {
         throw new Error('Incorrect email or password.');

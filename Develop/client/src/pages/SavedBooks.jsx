@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME, REMOVE_BOOK } from '../utils/queries'; // Import your GET_ME and REMOVE_BOOK queries
+import { GET_ME, REMOVE_BOOK } from '../utils/mutations'; // Import your GET_ME and REMOVE_BOOK queries
 
 import {
   Container,
